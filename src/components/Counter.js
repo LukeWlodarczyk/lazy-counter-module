@@ -1,6 +1,6 @@
 import { useCounterContext } from '../context/counter';
 
-function Counter() {
+const Counter = () => {
     const { counter, increment, decrement, reset } = useCounterContext()
   
     return <div>
