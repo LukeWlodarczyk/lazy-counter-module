@@ -1,14 +1,18 @@
 import { useReducer, createContext, use } from 'react';
 
-const CounterContext = createContext(1);
+const CounterContext = createContext(null);
+
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
+const RESET = 'RESET';
 
 const reducer = (state, action) => {
   switch(action.type) {
-    case 'increment': 
+    case INCREMENT: 
       return state + 1
-    case 'decrement': 
+    case DECREMENT: 
       return state - 1
-    case 'reset': 
+    case RESET: 
       return 0
     default: 
       return state;
@@ -24,9 +28,9 @@ export const CounterProvider = ({ children }) => {
 
   const [counter, dispatch] = useReducer(reducer, 0);
 
-  const increment = () => dispatch({ type: 'increment' });
-  const decrement = () => dispatch({ type: 'decrement' });
-  const reset = () => dispatch({ type: 'reset' });
+  const increment = () => dispatch({ type: INCREMENT });
+  const decrement = () => dispatch({ type: DECREMENT });
+  const reset = () => dispatch({ type: RESET });
   
   return (
     <CounterContext.Provider value={{ counter, increment, decrement, reset }}>
