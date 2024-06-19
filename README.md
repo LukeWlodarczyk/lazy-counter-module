@@ -1,4 +1,15 @@
-# Getting Started with Create React App
+# Lazy Counter Module
+
+```jsx
+ <LazyCounterModule 
+    defaultValue={10} // optional
+    loader={'Loading...'} // optinal
+  />
+```
+
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
