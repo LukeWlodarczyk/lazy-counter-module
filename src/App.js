@@ -1,17 +1,18 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
-import Counter from './components/Counter';
-import { CounterProvider } from './context/counter';
+import LazyCounterModule from './modules/Counter';
 
 function App() {
+  const [isCounterVisible, setCounterVisibility] = useState(false);
+
+  const toggleCounter = () => setCounterVisibility(v => !v);
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <CounterProvider>
-          <Counter />
-        </CounterProvider>
+        <button onClick={toggleCounter}>Toggle Counter</button>
+        {isCounterVisible && <LazyCounterModule defaultValue={1}/>}
       </header>
     </div>
   );
