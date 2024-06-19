@@ -4,7 +4,7 @@ import Loader from './loader';
 
 const LazyCounter = lazy(() => import('./Counter'));
 
-const LazyCounterModule = ({ loader, defaultValue }) => (
+const LazyCounterModule = ({ loader, defaultValue = 0 }) => (
   <Suspense fallback={loader ? loader : <Loader/>}>
     <LazyCounter defaultValue={defaultValue} />
   </Suspense>
