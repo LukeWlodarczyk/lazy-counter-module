@@ -3,7 +3,7 @@
 ```jsx
  <LazyCounterModule 
     defaultValue={10} // optional
-    loader={'Loading...'} // optinal
+    loader={'Loading...'} // optional
   />
 ```
 
