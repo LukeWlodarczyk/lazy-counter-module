@@ -1,9 +1,10 @@
-# Lazy Counter Module
+# Lazy Counter
 
 ```jsx
- <LazyCounterModule 
-    defaultValue={10} // optional
+ <LazyCounter
+    defaultValue={1} // optional
     loader={'Loading...'} // optional
+    className={'counter'} // optional
   />
 ```
 
