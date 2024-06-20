@@ -1,12 +1,12 @@
 import { lazy, Suspense } from 'react';
 
-import Loader from './loader';
+import Loader from './Loader/Loader';
 
 const LazyCounter = lazy(() => import('./Counter'));
 
-const LazyCounterModule = ({ loader, defaultValue = 0 }) => (
-  <Suspense fallback={loader ? loader : <Loader/>}>
-    <LazyCounter defaultValue={defaultValue} />
+const LazyCounterModule = ({ loader = <Loader/>, defaultValue = 0, className = '' }) => (
+  <Suspense fallback={loader}>
+    <LazyCounter defaultValue={defaultValue} className={className} />
   </Suspense>
 );
 

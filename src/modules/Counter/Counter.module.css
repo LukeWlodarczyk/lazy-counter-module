@@ -1,0 +1,18 @@
+.wrapper {
+  margin: 20px;
+}
+
+.button {
+  margin: 4px;
+  width: 200px;
+  padding: 8px;
+  border: 1px solid #282c34;
+  border-radius: 4px;
+  background-color: white;
+  color: #282c34;
+  font-weight: bold;
+}
+
+.result {
+  color: white;
+}
