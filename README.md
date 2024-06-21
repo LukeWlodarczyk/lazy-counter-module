@@ -1,5 +1,7 @@
 # Lazy Counter
 
+[DEMO](https://lazy-counter.surge.sh/)
+
 ```jsx
  <LazyCounter
     defaultValue={1} // optional
