@@ -6,14 +6,14 @@ const INCREMENT = 'INCREMENT';
 const DECREMENT = 'DECREMENT';
 const RESET = 'RESET';
 
-const reducer = defaultValue => (state, action) => {
+const reducer = (state, action) => {
   switch(action.type) {
     case INCREMENT: 
       return state + 1;
     case DECREMENT: 
       return state - 1;
     case RESET: 
-      return defaultValue;
+      return action.payload;
     default: 
       return state;
   }
@@ -26,11 +26,11 @@ export const CounterProvider = ({ children, defaultValue }) => {
 //   const decrement = () => setCounter(counter => counter - 1);
 //   const reset = () => setCounter(0);
 
-  const [counter, dispatch] = useReducer(reducer(defaultValue), defaultValue);
+  const [counter, dispatch] = useReducer(reducer, defaultValue);
 
   const increment = () => dispatch({ type: INCREMENT });
   const decrement = () => dispatch({ type: DECREMENT });
-  const reset = () => dispatch({ type: RESET });
+  const reset = () => dispatch({ type: RESET, payload: defaultValue });
   
   return (
     <CounterContext.Provider value={{ counter, increment, decrement, reset }}>
