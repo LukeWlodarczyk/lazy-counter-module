@@ -19,12 +19,13 @@ const reducer = (state, action) => {
   }
 }
 
-export const CounterProvider = ({ children, defaultValue }) => {
+export const CounterProvider = ({ children, defaultValue }) => {  
+//   Could be done with simple useState but lets try using context api with useReducer :D
 //   const [counter, setCounter] = useState(defaultValue);
 
 //   const increment = () => setCounter(counter => counter + 1);
 //   const decrement = () => setCounter(counter => counter - 1);
-//   const reset = () => setCounter(0);
+//   const reset = () => setCounter(defaultValue);
 
   const [counter, dispatch] = useReducer(reducer, defaultValue);
 
